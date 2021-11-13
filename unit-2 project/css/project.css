@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+/* project.html banner */
+
+.indexbanner {
+    height: 500px;
+    /* border: 1px solid red; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.banner-1 {
+    background-image: url(../banner/banner1.png);
+}
+
+.banner-2 {
+    background-image: url(../banner/banner2.png);
+}
+
+.banner-3 {
+    background-image: url(../banner/banner3.png);
+}
+
+.banner-4section {
+    height: 500px;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4, 365px);
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.banner-4section .card {
+    /* border: 1px solid red; */
+    width: 365px;
+}
+
+.banner-4section .card .img {
+    border: 1px solid gold;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-4section .card .btn {
+    /* border: 1px solid; */
+    height: 50px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+
+}
+
+.banner-4section .card .btn:hover {
+    background-color: black;
+    color: #ffffff;
+}
+
+.banner-4section .card:nth-child(1) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_jeans_5_250x.jpg?v=1635815226");
+}
+
+.banner-4section .card:nth-child(2) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_sweaters_6_250x.jpg?v=1635815249");
+}
+
+.banner-4section .card:nth-child(3) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_jackets_2_250x.jpg?v=1635815272");
+}
+
+.banner-4section .card:nth-child(4) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_shoes_2_250x.jpg?v=1635815315");
+}
+
+.icons {
+    height: 100px;
+    /* border: 1px solid white; */
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.icons .icon {
+    height: 60px;
+    width: 60px;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: #ffffff;
+    font-size: 22px;
+}
+
+.icons .icon:hover {
+    background-color: grey;
+}
+
+.banner-4 {
+    background-image: url('//cdn.shopify.com/s/files/1/0293/9277/files/desktop_lingerie_pjs_1_900x.jpg?v=1635552835');
+}
+
+.banner-5section {
+    height: 500px;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4, 365px);
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.banner-5section .card {
+    /* border: 1px solid red; */
+    width: 355px;
+}
+
+.banner-5section .card .img {
+    border: 1px solid gold;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-5section .card .btn {
+    /* border: 1px solid; */
+    height: 50px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+
+}
+
+.banner-5section .card .btn:hover {
+    background-color: black;
+    color: #ffffff;
+}
+
+.banner-5section .card:nth-child(1) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_giftsunder10_250x.jpg?v=1635547151");
+}
+
+.banner-5section .card:nth-child(2) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_giftsunder20_250x.jpg?v=1635547295");
+}
+
+.banner-5section .card:nth-child(3) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_giftsforher_250x.jpg?v=1635547350");
+}
+
+.banner-5section .card:nth-child(4) .img {
+    background-image: url("//cdn.shopify.com/s/files/1/0293/9277/files/grid_giftsforhim_250x.jpg?v=1635547523");
+}
+
+.indexbanner-1 {
+    height: 300px;
+    /* border: 1px solid red; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* margin-bottom: 8px; */
+    /* width: 200px; */
+}
+
+.banner-5 {
+    background-image: url(..//banner/banner-5.png);
+}
+
+.banner-6 {
+    background-image: url(..//banner/banner-6.png);
+}
