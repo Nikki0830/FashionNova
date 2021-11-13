@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+    <style>
+        .nav1{
+            border:1px solid red;
+            background-color:white;
+            font-size: 20px; 
+            font-weight: bold;
+            width: 100%;
+            height: 80px;  
+        }
+        li{
+          list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .nav2{
+            background-color: black;
+            width: 100%;
+            height: 80px;
+            color: white;
+        }
+        .nav3{
+            background-color: white;
+            width: 100%;
+            height: 40px;
+            color: black;
+        }
+        .nav4{
+            background-color: black;
+            width: 100%;
+            height: 40px;
+            color: white;
+        }
+        .text1{
+            background-color: black;
+            color:white;
+            border: 1px solid red;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 1%;
+            padding: 1%;     
+       }
+       .text2{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 1%;
+            padding: 1%;
+       }
+       #btn{
+           display: inline-block;
+           vertical-align: top;
+           margin-top: 2%;
+           margin-left: 700px;
+           color:white;
+           font-size: 17px;
+           font-weight: bold;
+           background-color: black;
+           font-family: 'Courier New', Courier, monospace;
+       }
+
+       #srch{
+           margin-top: 15px;
+           height:38px;
+           width:350px;
+           border-radius: 50px;
+       }
+       #img{
+        border: 1px solid red;
+           display: inline-block;
+           vertical-align: top;
+           height:80px;
+           width:350px;
+       }
+       .fa-camera{
+           margin-top: 2%;      
+       }
+       .icons{
+           border: 1px solid red;
+           height: 70px;
+           width:400px;
+           display: inline-block;
+           vertical-align: top;
+           margin-left: 200px;
+       }
+       .fa-search{
+           color: tomato;
+       } 
+       .icon2{
+           border: 1px solid red;
+           height: 70px;
+           width:300px;
+           display: inline-block;
+           vertical-align: top;
+           margin-left: 70px;
+       }
+       .fa-eye{
+           margin-top: 30px; 
+       }
+       .fa-heart{
+           margin-top:30px; 
+           margin-left: 50px;
+       }
+       .fa-user{
+           margin-top:30px; 
+           margin-left: 50px;
+       }
+       .fa-shopping-bag{
+           margin-top:30px; 
+           margin-left: 50px;
+       }
+        .nav3{
+            background-color: white;
+            width: 100%;
+            height: 30px;
+            color: black;
+        }
+         .nav4{
+            background-color: black;
+            width: 100%;
+            height: 50px;
+            
+        }
+        .text3{
+            display: inline-block;
+            margin-left: 200px;
+            margin-bottom: 4px ;
+       }
+       h3{
+           color: white;
+           font-size:10px;
+       }
+    </style>
+</head>
+<body>
+    <!---------------------------NIKITA PATEL----------------------------->
+    <div class="nav1">
+      <ul>
+          <a class = "text1" href="women.html"><li>WOMEN</li></a>
+          <a  class = "text2" href="curve.html"><li>CURVE</li></a>
+          <a  class = "text2" href="men.html"><li>MEN</li></a>
+          <a  class = "text2" href="kids.html"><li>KIDS</li></a>
+          <a  class = "text2" href="beauty.html"><li>BEAUTY</li></a>
+          <!-- <select id = "opn">
+          
+            <option value ="aud">OPTIONS</option>
+            <option value="aud2"><a  class = "text4" href="aud.html">AU AUD $</a></option>
+            <option value="aud3"><a  class = "text4" href="beauty.html">AU AUD $</a></option>
+            <option value="aud4"><a  class = "text4" href="beauty.html">AU AUD $</a></option>
+          </select> -->
+          <button id = "btn" type = "button">Log in</button>
+      </ul>
+    </div>
+    <div class="nav2">
+        <img id = "img" src = "data:image/png;base64,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"/>
+        
+        <!-- <i class="fas fa-search" style="font-size:48px;color:red;"></i> -->
+        <div class ="icons">
+        <input id = "srch" type = "text" placeholder="Search..."/>
+        <i class="fas fa-search"></i>
+        <i class="fas fa-camera"></i>
+        </div>
+
+        <div class = "icon2">
+            <i class="fas fa-eye"></i>
+            <i class="far fa-heart"></i>
+            <i class="far fa-user"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>  
+    </div>
+     <!--------------------------NIKITA PATEL----------------------------->
+
+<!-- ---------------------------ARADHANA SHUKLA---------------------------------- -->
+ <div class="nav3">
+    <ul>
+      <a  class = "text3" href="women.html"><li>NEW IN</li></a>
+      <a  class = "text3" href="sweaters.html"><li>SWEATERS</li></a>
+      <a  class = "text3" href="jeans.html"><li>JEANS</li></a>
+      <a  class = "text3" href="shoes.html"><li>SHOES</li></a>
+      <a  class = "text3" href="dresses.html"><li>DRESSES</li></a>
+    </ul>
+</div>
+<div class="nav4">
+     <!-- <h3>Use After Pay To Buy Now or later!</h3>  -->
+    <marquee behavior="" direction="right"><a href="https://www.fashionnova.com/collections/new"><h3>Use After Pay To Buy Now or later!</h3></a>
+    <a href="https://www.fashionnova.com/pages/track-order"><h3>Track Your Order Here!</h3></a>
+    </marquee>   
+</div>  
+<!-- ---------------------------ARADHANA SHUKLA---------------------------------- -->
+</body>
+</html>
+
+<script>
+
+</script>

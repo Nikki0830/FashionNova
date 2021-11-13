@@ -9,17 +9,17 @@
 
     <style>
         .container{
-            /* border:1px solid red; */
+            border:1px solid red;
             height:auto;
             width:100%;
         }
         .box1{
-            /* border:1px solid red; */
+            border:1px solid red;
             height:60px;
             width:100%;
         }
         .box2{
-            /* border:1px solid red; */
+            border:1px solid red;
             height:150px;
             width:100%;
         }
@@ -59,7 +59,7 @@
             font:Arial,sans-serif;
         }
         .box3{
-            /* border:1px solid red; */
+            border:1px solid red;
             height:auto;
             width:20%;
             float:left
@@ -68,7 +68,7 @@
             float:right; */
         }
         .box4{
-            /* border:1px solid red; */
+            border:1px solid red;
             height:auto;
             width:79%;
             display: grid;
@@ -212,7 +212,7 @@
         .Fprice{
             height: 250px;
             width: 100%;
-            /* border: 1px solid blue; */
+            border: 1px solid blue;
             text-align: center;
             font-size: 25px;
             text-decoration: underline;
@@ -383,7 +383,7 @@
              <img class="appstore" height="50px" width="150px" src="appstorelogo.jpeg"/></a>
 
          <a href="https://play.google.com/store/apps/details?id=co.tapcart.app.npQt0DXZpj&hl=en_US&gl=US">
-             <img class="appstore" height="50px" width="150px" src="playstorelogo.jpg"/></a>
+             <img class="appstore" height="50px" width="150px" src="playstorelogo.jpeg"/></a>
         </div>
         <div id="box2">
          <div class="txt">
@@ -468,9 +468,9 @@
 
 function handleSizeSort() {
         var selected = document.getElementById("sortBySize").value;
-        if (selected=="S"){
+        if (value=="S"){
            product = product.sort(function (a, b) {
-               return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+               return a.name > b.name ? -1 : b.name > a.name ? 1 : 0;
            });
         }
         if (selected=="M"){
@@ -481,16 +481,17 @@ function handleSizeSort() {
 
         if (selected=="L"){
            product = product.sort(function (a, b) {
-               return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+               return a.name > b.name ? -1 : b.name > a.name ? 1 : 0;
            });
         }
         if (selected=="XL"){
            product = product.sort(function (a, b) {
-               return a.name > b.name ? -1 : b.name > b.name ? 1 : 0;
+               return a.name > b.name ? 1 : b.name > b.name ? -1 : 0;
            });
         }
         
         console.log(product);
+
         showProducts(product);
     }
 
@@ -633,7 +634,7 @@ function handleSizeSort() {
 
   var fsz = document.createElement("div");
   fsz.setAttribute("class", "fsprice");
-  fsz.innerHTML = '<select id="sortBySize" onchange="handleSizeSort()"> <option value="">Sort BY Size</option> <option value="S">S</option>  <option value="M">M</option> <option value="L">L</option>  <option value="XL">XL</option>  </select>';
+  fsz.innerHTML = '<select id="sortBySize" onchange="handleSizeSort()"> <option>Sort BY Size</option> <option value="S">S</option>  <option value="M">M</0option> <option value="L">L</option>  <option value="XL">XL</option>  </select>';
 
   var g = document.createElement("div");
   g.textContent="Filter Color";
@@ -648,7 +649,7 @@ function handleSizeSort() {
   d.setAttribute("class", "box4");
 
   var text1 = document.createElement("h1");
-  text1.innerHTML = '<a href = "women.html">WOMEN</a> <STYLE>a {text-decoration: none; color: black;}</STYLE>';
+  text1.innerHTML = '<a href = "nav bar2.html">WOMEN</a> <STYLE>a {text-decoration: none; color: black;}</STYLE>';
   text1.setAttribute("id", "name");
 
   var text2 = document.createElement("h1");
@@ -754,7 +755,7 @@ function handleSizeSort() {
         }
     
     document.getElementById("hbtn").addEventListener("click",function(){
-        window.location.href = "checkout.html";
+        window.location.href = "cart.html";
     });
      
     // function addToWishlist(item) {

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=<device-width>, initial-scale=1.0"> -->
+    <title>Document</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+
+    <style>
+        .container{
+            border:1px solid teal;
+            height:1700px;
+            width:100%;
+        }
+        .box1{
+            border:1px solid red;
+            height:60px;
+            width:100%;
+        }
+        .box2{
+            border:1px solid red;
+            height:150px;
+            width:100%;
+        }
+        #name{
+            display: inline-block;
+            font-size: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 10px;
+        }
+        #name:hover{
+            text-decoration: underline;
+        }
+        a:hover {
+            color: navy;
+        }
+
+        #arrow{
+            display: inline-block;
+            font-size: 13px;
+            color: #2e2e4b;
+            margin-left: 20px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        #arrownext{
+            display: inline-block;
+            font-size:13px;
+            color: #2e2e4b;
+            margin-left: 20px;
+        }
+        #heading{
+            text-align: center;
+            font-size: 60px;
+            font-weight: bolder;
+            color: black;
+            width:49vw;
+            margin: 0 auto;
+            font:Arial,sans-serif;
+            position: absolute;
+            margin-bottom: 90%;
+            margin-left: 25%;
+        }
+        .box3{
+            border:1px solid red;
+            height:980px;
+            width:20%;
+            /* float:left; */
+            /* display: inline-block; */
+            /* vertical-align: top; */
+            /* float:right; */
+        }
+        /* .box5{
+            border:1px solid yellow;
+            height:28%;
+            width:20%;
+
+        } */
+        .box4{
+            border:1px solid yellow;
+            height:28%;
+            width:20%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            float: right;
+            grid-gap:1px ;
+            margin-top: 14%;
+            /* display: inline-block; */
+            /* vertical-align: top; */
+            /* display: inline-block;
+            vertical-align: top;  */
+            /* margin-left: 30%; */
+            /* position: absolute;
+            margin-bottom: ; */
+        }
+        #pic{
+            width:280px;
+            height:400px;
+            border: 1px solid lightgrey;
+            
+        }
+        #all{
+            width:280px;
+            height:90%;
+            border: 1px solid purple;
+            margin-left: 5px;
+            
+        }
+        p{
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #imgname{
+            font-size: 12px;
+            color:gray;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #strike{
+            display: inline-block;
+            color:black;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration:line-through;
+            line-height:1px;
+        }
+        #Nstrike{
+            display: inline-block;
+            color:red;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        #mclr{
+            border: 1px solid red;
+            height:20px;
+            width:20px;
+            border-radius: 50px;
+            background-color: maroon;
+            display: inline-block;
+        }
+
+        #oclr{
+            border: 1px solid red;
+            height:20px;
+            width:20px;
+            border-radius: 50px;
+            background-color: orangered;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        #cclr{
+            border: 1px solid red;
+            height:20px;
+            width:20px;
+            border-radius: 50px;
+            background-color: wheat;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        #ctxt{
+            border: 1px solid red;
+            height:20px;
+            width:20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-left: 20px;
+            vertical-align: top;
+        }
+        #all {
+           position: relative;
+           z-index: 1;
+        }
+        #all:hover #hbtn{
+           display:block;
+        }
+        #hbtn{
+            position: absolute;
+            z-index: 2;
+            top: 85px;
+            display: none;
+            left: 35px;
+            background-color: black;
+            color:white;
+            height:50px;
+            width:210px;
+            margin-top:95%;
+        }
+        #color{
+            color: grey;
+            font-size: 15px;
+        }
+        #size{
+            color: black;
+            font-size: 20px;
+        }
+        #icn{
+            position:absolute;
+            margin-top: 5%;
+            margin-left: 90%;
+            width: 40px !important;
+            height: 40px !important;
+        }
+        .Fsize{
+            height: 300px;
+            width: 100%;
+            border: 1px solid yellow;
+            
+        }
+        .Fcolor{
+            height: 300px;
+            width: 100%;
+            border: 1px solid green;
+        }
+        .Fprice{
+            height: 200px;
+            width: 100%;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body> 
+    <select id="sortByPrice" onchange="handlePriceSort()">
+        <option value="">sort by price</option>
+        <option value="low">low to high</option>
+        <option value="high">high to low</option>
+        </select> 
+
+        <div id = "dis"></div>
+    </body>
+</html>
+<script>
+
+var data = [
+    {
+        image_url: "https://cdn.shopify.com/s/files/1/0293/9277/products/09-30-21Studio1_CE_KG_14-22-40_39_72919_Burgundy_0624_EH_360x.jpg?v=1633367152",
+        discount: "40% OFF! NO CODE NEEDED 🔥 PRICES AS MARKED",
+        name:"Warm And Fuzzy Cardigan-Tapue",
+        price: "USD 3,100.00",
+        price1: 660,
+        colour: "Color - Maroon",
+        Size: "S",
+
+    },
+    {
+        image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/07-15-21Studio3_ME_TB_10-48-41_11_9790WN_Camel_0152_EH_360x.jpg?v=1626737574",
+        discount: "40% OFF! NO CODE NEEDED 🔥 PRICES AS MARKED",
+        name: "Sierra Cardign Set-Taupe",
+        price: "USD $44.99",
+        price1: 26.99,
+        colour: "Color - Brown",
+        Size: "L",
+    },
+    {
+        image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/08-17-20Studio4_BR_CP_11-27_34_W9009_White_52338_JK_360x.jpg?v=1597696025",
+        discount: "40% OFF! NO CODE NEEDED 🔥 PRICES AS MARKED",
+        name: "Running Around Plaid Cardigan - Grey/combo",
+        price: "USD $29.99",
+        price1: 90,
+        colour: "Color - White",
+        Size: "S",
+    },
+
+    {
+        image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/10-04-21Studio1_SN_KP_13-09-06_54_9790WN_Mocha_1117_DC_360x.jpg?v=1633465902",
+        discount: "40% OFF! NO CODE NEEDED 🔥 PRICES AS MARKED",
+        name: "Let's Get Going Cardigan Sweater - Mocha",
+        price: "USD $44.99",
+        price1: 900,
+        colour: "Color - Dark Brown",
+        Size: "L",
+    },
+    
+    
+    {
+       image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/10-09-19_Studio_3_JP_LE_10-36-29_8__W9009_Camel_P_36160_JD_360x.jpg?v=1570658234",
+        discount:"40% OFF! NO CODE NEEDED 🔥 PRICES  AS MARKED",
+        name: "Never A Dull Moment Cardigan - Camel" ,
+        price: "USD $34.99",
+        price1: 800,
+        colour: "Color - Nude",
+        Size: "X",
+    },
+
+    {
+       image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/10-05-21Studio1_ME_RL_11-13-17_22_9967WH_Mauve_P_1389_PB_360x.jpg?v=1633535069",
+        discount:"40% OFF! NO CODE NEEDED 🔥 PRICES  AS MARKED",
+        name: "So Chic Cardigan - Mauve" ,
+        price: "USD $44.99",
+        price1:  650,
+        colour: "Color - Pink",
+        Size: "X",
+    },
+
+    {
+       image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/10-24-19_Studio_3_RM_ES_10-44-27_17__FL19G838_Nude_0508_NT_360x.jpg?v=1572027706",
+        discount:"40% OFF! NO CODE NEEDED 🔥 PRICES  AS MARKED",
+        name: "Get Your Own Balloon Sleeve Cardigan - Custard" ,
+        price: "USD $39.99",
+        price1: 549,
+        colour: "Color - lightCream",
+        Size: "XL",
+
+    },
+    {
+    image_url:"https://cdn.shopify.com/s/files/1/0293/9277/products/10-10-19_STUDIO_2_MA_KY_10-28-23_10_7720879FN_Taupe_41055_WG_360x.jpg?v=1571441563",
+        discount:"40% OFF! NO CODE NEEDED 🔥 PRICES AS MARKED",
+        name: "Warms Your Heart Sweater Duster - Taupe" ,
+        price: "USD $44.99",
+        price1: 789,
+        colour: "Color - cream",
+        Size: "M",
+    },
+    ];
+
+  var body = document.querySelector("body");
+  var mainDiv = document.createElement("div");
+  mainDiv.setAttribute("class", "container");
+  body.append(mainDiv);
+  showProducts();
+
+//   ..............................FILTER........................................
+function handlePriceSort() {
+        var selected = document.getElementById("sortByPrice").value;
+        console.log("selected: ",selected);
+        if (selected=="low"){
+           data = data.sort(function (a,b) {
+               return a.price1-b.price1;
+           });
+        }
+        if (selected=="high"){
+           data = data.sort(function (a,b) {
+               return b.price1 - a.price1;
+           });
+        }
+        console.log(data);
+        showProducts(data);
+    }
+
+
+
+  localStorage.setItem("setD",JSON.stringify(data));
+  var myd = JSON.parse(localStorage.getItem("setD"));
+  console.log("myd:", myd);
+
+  function showProducts(){
+      document.querySelector("#dis").innerHTML="";
+
+    data.map(function (item) {
+      var imageDiv = document.createElement("div");
+      imageDiv.setAttribute("id", "all");
+
+      var img = document.createElement("img");
+      img.setAttribute("src", item.image_url);
+      img.setAttribute("id", "pic");
+
+      var icon = document.createElement("div");
+      icon.innerHTML = '<a href="Favourite.html"><i class="far fa-heart fa-lg"> </i></a>';
+      icon.setAttribute("id", "icn");
+
+      var clr = document.createElement("div");
+      clr.setAttribute("id", "clr");
+
+      var marun = document.createElement("div");
+      marun.setAttribute("id", "mclr");
+
+      var orange = document.createElement("div");
+      orange.setAttribute("id", "oclr");
+
+      var cream = document.createElement("div");
+      cream.setAttribute("id", "cclr");
+
+      var ctext = document.createElement("div");
+      ctext.setAttribute("id", "ctxt");
+      ctext.textContent = "+4";
+      
+      var h1 = document.createElement("p");
+      h1.textContent = item.discount;
+
+      var h3 = document.createElement("p");
+      h3.textContent = item.name;
+      h3.setAttribute("id", "imgname");
+
+      var h2 = document.createElement("p");
+      h2.textContent = item.price;
+      h2.setAttribute("id", "strike");
+
+      var h4 = document.createElement("p");
+      h4.textContent = item.price1;
+      h4.setAttribute("id", "Nstrike");
+
+      var h5 = document.createElement("p");
+      h5.textContent = item.colour;
+      h5.setAttribute("id", "color");
+
+      var h6 = document.createElement("p");
+      h6.textContent = item.Size;
+      h6.setAttribute("id", "size");
+
+      var btn = document.createElement("button");
+      btn.textContent = "Add To Bag";
+      btn.setAttribute("id", "hbtn");
+
+        // var e = document.createElement("div");
+        // e.setAttribute("class", "box5");
+
+        var d = document.createElement("div");
+        d.setAttribute("class", "box4");
+
+        // mainDiv.append(e)
+
+        // body.append(mainDiv);
+        mainDiv.append(d)
+        //   e.append(c,d);
+        // d.append(imageDiv);
+        document.querySelector("#dis").append(d);
+        d.append(imageDiv);
+        imageDiv.append(icon,img,btn,h1, h3,h2,h4,h5,h6,clr);
+        clr.append(marun,orange,cream,ctext);
+        
+        //   mainDiv.append(imageDiv);
+        });
+    }
+      var a = document.createElement("div");
+      a.setAttribute("class", "box1");
+
+      var b = document.createElement("div");
+      b.setAttribute("class", "box2");
+
+      var c = document.createElement("div");
+      c.setAttribute("class", "box3");
+
+        var text1 = document.createElement("h1");
+        text1.innerHTML = '<a href = "nav bar2.html">WOMEN</a> <STYLE>a {text-decoration: none; color: black;}</STYLE>';
+        text1.setAttribute("id", "name");
+
+        var text2 = document.createElement("h1");
+        text2.textContent = ">";
+        text2.setAttribute("id", "arrow");
+
+        var text3 = document.createElement("h1");
+        text3.textContent = "cardigans & sweater coats";
+        text3.setAttribute("id", "arrownext");
+
+        var text4 = document.createElement("h1");
+        text4.textContent = "CARDIGANS & SWEATER COATS";
+        text4.setAttribute("id", "heading");  
+
+        mainDiv.append(a);
+        a.append(text1,text2,text3);
+        mainDiv.append(b);
+        b.append(text4);
+        
+        mainDiv.append(c);
+
+       
+       
+
+//   var data = JSON.parse(localStorage.getItem("shoppingBag"));
+//     console.log("data:", data);
+//     showProducts(data);
+
+//     var cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+//     function handlePriceSort() {
+//         var selected = document.getElementById("sortByPrice").value;
+//         console.log("selected: ",selected);
+//         if (selected=="low"){
+//            data = data.sort(function (a,b) {
+//                return a.price-b.price;
+//            });
+//         }
+//         if (selected=="high"){
+//            daat = data.sort(function (a,b) {
+//                return b.price - a.price;
+//            });
+//         }
+//         console.log(data);
+//         showProducts(data);
+//     }
+
+
+
+//   var e = document.createElement("div");
+//   e.setAttribute("class", "box5");
+//-----------------------------------------FILTER BOX---------------------------------------------------//
+
+
+//   var e = document.createElement("div");
+//   e.textContent="Size";
+//   e.setAttribute("class", "Fsize");
+
+//   var sbtn = document.createElement("button");
+//   sbtn.textContent = "S";
+//   sbtn.setAttribute("id","Sbtn");
+  
+  
+//   var lbtn = document.createElement("button");
+//   lbtn.textContent = "L";
+//   lbtn.setAttribute("id","Lbtn");
+
+//   var mbtn = document.createElement("button");
+//   mbtn.textContent = "M";
+//   mbtn.setAttribute("id","Mbtn");
+
+//   var xlbtn = document.createElement("button");
+//   xlbtn.textContent = "XL";
+//   xlbtn.setAttribute("id","XLbtn");
+
+//   var xbtn = document.createElement("button");
+//   xbtn.textContent = "X";
+//   xbtn.setAttribute("id","Xbtn");
+   
+//   e.append(sbtn,lbtn,mbtn,xlbtn,xbtn);
+
+//   var selected = document.getElementByclass("Fsize").value;
+//        console.log("selected: ",selected);
+//        if(selected=="S") {
+//             data = data.sort(function(a,b) {
+//                 return a.price-b.price;
+//             });
+//        }
+
+//        if(selected=="M") {
+//             data = data.sort(function(a,b) {
+//                 return b.price-a.price;
+//             });
+//        }
+
+//   var f = document.createElement("div");
+//   f.setAttribute("class", "Fcolor");
+
+//   var g = document.createElement("div");
+//   g.setAttribute("class", "Fprice");
+   
+
+//--------------------------------------------------------GRID---------------------------------------------------------//
+
+
+
+//   c.append(e,f,g);
+//    showProducts();
+
+  
+</script>
