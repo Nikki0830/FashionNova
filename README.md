@@ -20,3 +20,5 @@ Fashion Nova is an American fast fashion retail company. The company operates on
 
 <p>6. Checkout Page </p>
 <img src="https://user-images.githubusercontent.com/67469200/153703761-ed0118e6-946a-4e50-be52-cc7a79607909.png"/>
+
+<p>To run the project click on index.html<p>
